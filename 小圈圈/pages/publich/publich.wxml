@@ -1,0 +1,25 @@
+<view class="container">
+  <!-- 输入文字区域 -->
+  <view class="input-area">
+    <view class="textarea">
+      <textarea bindblur="quanquanText" bindfocus="inpFocus" value="{{content}}" class="{{inp?'inp':''}}"></textarea>
+    </view>
+  </view>
+
+  <!-- 图片预览区域 -->
+  <block wx:if="{{previewImage.length}}">
+    <scroll-view scroll-x class="preview-images" enable-flex="true">
+      <view class="images-item" wx:for="{{previewImage}}" wx:key="index">
+        <image class="img" data-index="{{index}}" bindtap="previewImg" src="{{previewImage[index]}}"></image>
+        <icon type="clear" data-index="{{index}}" bindtap="removeImg" class="clear"></icon>
+      </view>
+    </scroll-view>
+  </block>
+
+  <!-- 按钮区 -->
+  <view class="btn-func">
+    <button class="choose-img" bindtap="chooseImg">选择图片</button>
+    <button class="publish-quanquan" open-type="getUserInfo" bindgetuserinfo="publishQuanQuan">发布圈圈</button>
+  </view>
+
+</view>

@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="inp-content">
+    <input class="inp-title-text" placeholder="请开始你的表演" bindblur="commentContent"></input>
+  </view>
+
+  <view class="publish-comment">
+    <button class="publish-comment-btn" bindtap="publishComment">发布神评</button>
+  </view>
+</view>

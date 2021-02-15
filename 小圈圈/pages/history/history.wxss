@@ -1,0 +1,60 @@
+/* 每一条小圈圈动态 */
+.moments-item {
+  padding: 20rpx 20rpx 20rpx 40rpx;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+/* 用户头像 昵称 时间 */
+.user-info {
+  display: flex;
+  margin-bottom: 16rpx;
+}
+
+/* 用户头像 */
+.user-avatar {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-avatar image {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+/* 用户昵称 发布时间 */
+.user-publish-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+
+.user-publish-info .nikename {
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.user-publish-info .time {
+  font-size: 24rpx;
+}
+
+/* 内容区域 */
+.text {
+  font-size: 30rpx;
+}
+
+.img-area {
+  height: 236rpx;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 16rpx;
+  margin-right: 20rpx;
+}

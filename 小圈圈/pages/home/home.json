@@ -1,0 +1,9 @@
+{
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#5495e6",
+  "navigationBarTitleText": "小圈圈社交圈",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundColor":"#5495e6"
+}

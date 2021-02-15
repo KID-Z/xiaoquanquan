@@ -1,0 +1,68 @@
+<!-- 小圈圈每一条动态 -->
+<view class="moments-item">
+  <!-- 用户一些信息 头像 昵称 发布时间 -->
+  <view class="user-info">
+    <view class="user-avatar">
+      <image src="{{quanquan[0].user.avatarUrl}}"></image>
+    </view>
+    <view class="user-publish-info">
+      <text class="nikename">{{quanquan[0].user.nickName}}</text>
+      <text class="time">{{quanquan[0].time}}</text>
+    </view>
+  </view>
+  <!-- 用户发布内容 文字 图片 -->
+  <view class="content">
+    <!-- 文字加图片 -->
+    <block wx:if="{{quanquan[0].content && quanquan[0].images.length>0}}">
+      <text class="text">{{quanquan[0].content}}</text>
+      <view class="img-area">
+        <block wx:for="{{quanquan[0].images}}" wx:key="*this">
+          <image class="img" src="{{item}}" data-index="{{index}}" bindtap="preview"></image>
+        </block>
+      </view>
+    </block>
+
+    <!-- 图片 -->
+    <block wx:elif="{{quanquan[0].images.length>0}}">
+      <view class="img-area">
+        <block wx:for="{{quanquan[0].images}}" wx:key="*this">
+          <image class="img" src="{{item}}" data-index="{{index}}" bindtap="preview"></image>
+        </block>
+      </view>
+    </block>
+
+    <!-- 文字 -->
+    <block wx:else>
+      <text class="text">{{quanquan[0].content}}</text>
+    </block>
+  </view>
+
+  <!-- 回复评论 -->
+  <view class="reply-comment" wx:if="{{replyList.length}}">
+    <view class="hint">—————— 以下是回复内容 ——————</view>
+    <view class="comment" wx:for="{{replyList}}" wx:key="_id">
+      <text class="reply-name">{{item.who_name}}: </text>
+      <text class="comment-content">{{item.comment_content}}</text>
+    </view>
+  </view>
+
+
+  <!-- 是否喜欢的图标 -->
+  <!-- 已喜欢 -->
+  <view class="isLike" wx:if="{{isLike}}" bindtap="likeQuanQuan">
+    <image class="like-icon" src="/images/topic-detail/like.png"></image>
+    <text>已喜欢</text>
+  </view>
+
+
+  <!-- 未喜欢 -->
+  <view class="isLike" wx:else bindtap="likeQuanQuan">
+    <image class="like-icon" src="/images/topic-detail/unlike.png"></image>
+    <text>喜欢</text>
+  </view>
+
+  <!-- 回复按钮 -->
+  <view class="reply">
+    <button class="reply-btn"  open-type="getUserInfo" bindgetuserinfo="navToReplyPage">回复</button>
+  </view>
+</view>

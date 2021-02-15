@@ -1,0 +1,32 @@
+/* 输入框 */
+.inp-content{
+  height: 100rpx;
+  background: #f3efef;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.inp-title-text{
+  padding-left: 20rpx;
+  margin-top: 15rpx;
+  height: 70rpx;
+  background: #fff;
+}
+
+/* 发布按钮 */
+.publish-comment{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100rpx;
+}
+.publish-comment .publish-comment-btn{
+  width: 400rpx;
+  height: 90rpx;
+  background: #d50310;
+  color: #fff;
+  border-radius: 45rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,43 @@
+<view class="container">
+  <!-- 小圈圈每一条动态 -->
+    <view class="moments-item" wx:for="{{quanquan}}" wx:key="_id" bindtap="detailsPage" data-id="{{item._id}}">
+      <!-- 用户一些信息 头像 昵称 发布时间 -->
+      <view class="user-info">
+        <view class="user-avatar">
+          <image src="{{item.user.avatarUrl}}"></image>
+        </view>
+        <view class="user-publish-info">
+          <text class="nikename">{{item.user.nickName}}</text>
+          <text class="time">{{item.time}}</text>
+        </view>
+      </view>
+      <!-- 用户发布内容 文字 图片 -->
+      <view class="content">
+        <!-- 文字加图片 -->
+        <block wx:if="{{item.content && item.images.length>0}}">
+          <text class="text">{{item.content}}</text>
+          <scroll-view scroll-x class="img-area" enable-flex='true'>
+            <view wx:for="{{item.images}}" wx:key="*this">
+              <image class="img" src="{{item}}"></image>
+            </view>
+          </scroll-view>
+        </block>
+
+        <!-- 图片 -->
+        <block wx:elif="{{item.images.length>0}}">
+          <scroll-view scroll-x class="img-area" enable-flex='true'>
+            <view wx:for="{{item.images}}" wx:key="*this">
+              <image class="img" src="{{item}}"></image>
+            </view>
+          </scroll-view>
+        </block>
+
+        <!-- 文字 -->
+        <block wx:else>
+          <text class="text">{{item.content}}</text>
+        </block>
+      </view>
+
+    </view>
+
+</view>

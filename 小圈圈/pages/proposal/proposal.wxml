@@ -1,0 +1,13 @@
+<view class="container">
+  <form bindsubmit="submitProposal">
+    <view class="title">
+      <input placeholder="请输入标题" class="inp-title" name="title"></input>
+    </view>
+    <view class="content">
+      <textarea placeholder="请输入内容" class="inp-content" name="content"></textarea>
+    </view>
+    <view class="submit-proposal">
+      <button class="submit-btn" form-type="submit">提交建议</button>
+    </view>
+  </form>
+</view>
